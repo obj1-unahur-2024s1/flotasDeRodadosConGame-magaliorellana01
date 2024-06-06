@@ -4,6 +4,8 @@ import vehiculos.*
 class Dependencia {
 	const vehiculos = []
 	const empleados = []
+	const listaPedidos = []
+
 	
 	method agregarEmpleado(empleado){
 		return empleados.add(empleado)
@@ -50,9 +52,33 @@ class Dependencia {
 		vehiculos.size() >= 5
 	}
 	
+	method agregarPedido(pedido){
+		return listaPedidos.add(pedido)
+	}
+	
+	method quitarPedido(pedido){
+		return listaPedidos.remove(pedido)
+	}
+	
+	method totalDePasajerosDePedidos(){
+		return listaPedidos.sum({pedido => pedido.cantidadPasajeros()})
+	}
+	
+	method pedidosImposibles(){
+		return listaPedidos.filter({ pedido =>
+		vehiculos.all({ auto => not pedido.satisfacerPedido(auto) })})
+	}
+	
+	method esColorIncompatible(color){
+		return  listaPedidos.all({ p => p.coloresIncompatibles() == color})
+	}
+	
+	method relajarTodosLosPedidos(){
+		return listaPedidos.forEach({ p => p.relajar()})
+	}
+	
 	
 }
-
 class Empleados {
 	var property nombre = ""	
 }

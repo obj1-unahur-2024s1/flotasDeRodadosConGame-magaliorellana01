@@ -19,6 +19,8 @@ class Corsa {
 	method color(){
 		return color
 	}
+	
+	
 }
 
 class Kwid {
@@ -53,6 +55,8 @@ class Kwid {
 		return "Azul"
 	}
 	
+
+	
 }
 
 class Traffic {
@@ -76,6 +80,8 @@ class Traffic {
 	method color(){
 		return "Blanco"
 	}
+	
+	
 }
 
 
@@ -141,7 +147,11 @@ class AutosEspeciales{
 		return color
 	}
 	
+
+	
 }
+
+
 
 
 

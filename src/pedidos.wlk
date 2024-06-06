@@ -5,7 +5,7 @@ class Pedidos{
 	var property distancia
 	var property tiempoMaximo
 	var property cantidadPasajeros
-	const coloresIncompatibles = #{}
+	const property coloresIncompatibles = #{}
 	
 	method agregarColoresIncompatibles(color){
 		return coloresIncompatibles.add(color)
@@ -17,9 +17,14 @@ class Pedidos{
 	
 	method satisfacerPedido(auto){
 		return auto.velocidadMaxima() >= (self.velocidadRequerida() + 10) and
-		auto.capacidad() >= cantidadPasajeros and auto.color() != coloresIncompatibles
+		auto.capacidad() >= cantidadPasajeros and not coloresIncompatibles.contains(auto.color())
 		
 	}
+	
+	method relajar(){
+		
+	}
+	
 	
 	
 }
